@@ -1,0 +1,6 @@
+app/utils/secret.js
+node_modules
+dist
+.firebaserc
+firebase.json
+README.md
