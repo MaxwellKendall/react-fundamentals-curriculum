@@ -1,28 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import getData from '../utils/api'
+import GetWeather from './GetWeather'
+
 
 class Forecast extends React.Component {
     constructor(props){
         super(props);
-        var x = this.props.forecast;
 
     }
     render(){
-        console.log(forecast);
-        return(
+        const x = this.props.forecast;
+        // const data = x.call().then((response) => {
+        //     return response;
+        // });
+        console.log(x);
+        return (
             <div className="forecast">
-                <ul className="forecast">
-
-                    <li className="day"></li>
-                </ul>
+                <h1>Blahblahblahlbhal</h1>
             </div>
         )
     }
 }
 
 Forecast.PropTypes = {
-    forecast : PropTypes.object.isRequired
+    forecast : PropTypes.func.isRequired
 }
 
 export default Forecast

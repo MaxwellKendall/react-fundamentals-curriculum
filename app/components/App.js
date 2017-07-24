@@ -1,21 +1,35 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import GetWeather from './GetWeather'
 import Home from './Home'
-import Forecast from './Forecast'
-import Details from './Details'
+import Routes from './Routes'
+import Header from './Header'
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+    this.state = {
+        city: '',
+    }
+    this.updateCity = this.updateCity.bind(this);
+    }
+    updateCity(event) {
+        const value = event.target.value.split(',')[0];
+        this.setState(() => {
+            return {
+                city: value
+                }
+            })
+    }
     render() {
+        const globalHeaderTitle = "My First React App";
+        const homeFlag = window.location.href.substr(21).length;
         return (
-            <Router>
-                <div className="main">
-                        <Switch>
-                            <Route exact path='/' component={Home}></Route>
-                            <Route exact path='/results' component={Forecast}></Route>
-                            <Route path='/details' component={Details}></Route>
-                        </Switch>
-                </div>
-            </Router>
+            <div className="main">
+                <Header
+                    title={globalHeaderTitle}
+                    />
+                <Routes />
+            </div>
         )
     }
 }
