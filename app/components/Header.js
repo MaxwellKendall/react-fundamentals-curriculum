@@ -7,6 +7,7 @@ const Header = (props) => {
         <div id="header">
             <GetWeather
                 title={props.title}
+                id='header-city-search'
             />
         </div>
     )

@@ -7,12 +7,12 @@ import Home from './Home'
 const Routes = (props) =>{
     return (
         <Router>
-                <Switch>
-                    <Route exact path='/' component={Home}></Route>
-                    <Route path='/forecast' component={Forecast}></Route>
-                    <Route path='/details' component={Details}></Route>
-                </Switch>
-            </Router>
+            <Switch>
+                <Route path='/forecast' component={Forecast}></Route>
+                <Route path='/details' component={Details}></Route>
+                <Route exact path='/' component={Home}></Route>
+            </Switch>
+        </Router>
     )
 }
 

@@ -7,6 +7,8 @@ import getData from '../utils/api'
 class Home extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props.location.pathname);
+
 }
 
     render () {
@@ -15,6 +17,7 @@ class Home extends React.Component {
                 <div className="home-page">
                     <GetWeather
                         title={homePageTitle}
+                        id='home-city-search'
                     />
                 </div>
         )
