@@ -12,7 +12,6 @@ const axios = require('axios');
         for (var i = 4; i <= data.length; i += 8){
             forecast.push(data[i]);
         }
-        console.log(forecast);
         return forecast;
     })
     .catch(function(r){

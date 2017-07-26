@@ -7,20 +7,10 @@ import getData from '../utils/api'
 class GetWeather extends React.Component {
     constructor(props){
         super(props);
-        this.getCity = this.getCity.bind(this);
         this.state = {
             city : ''
         }
-    this.getCity = this.getCity.bind(this);
     this.updateCity = this.updateCity.bind(this);
-    }
-    getCity(){
-        let id = this.props.id;
-        let city = document.getElementById(id).value;
-        let cityForecast = getData(city).then((resp) => {
-            return resp;
-        });
-        return cityForecast;
     }
 
     updateCity(event){
@@ -34,9 +24,7 @@ class GetWeather extends React.Component {
     render () {
         const id = this.props.id;
         const city = document.getElementById(id);
-        console.log(city);
         return (
-            <Router>
                 <div className='getWeather'>
                     <h1 className="title">{this.props.title}</h1>
                         <input className="search-for-city"
@@ -45,15 +33,8 @@ class GetWeather extends React.Component {
                             id={this.props.id}
                             onChange = {this.updateCity}
                             />
-                        <button onClick={this.getCity}className="btn">
-                            <Link to={{
-                                    pathname:`/forecast/${this.state.city}`
-                                }}>
-                                Get Weather
-                            </Link>
-                        </button>
+                        <Link className='btn' to={`/forecast/${this.state.city}`}>Get Weather</Link>
                 </div>
-            </Router>
         )
     }
 }

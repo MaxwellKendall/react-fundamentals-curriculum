@@ -26,7 +26,7 @@ var config = {
           rules: [  // <<< 2 a.
               {test: /\.(js)$/, use: 'babel-loader'},
               {test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
-              {test: /\.svg$/, use: 'file-loader'}
+              {test: /\.svg$/, use: ['file-loader']}
           ]
       },
       devServer : {

@@ -9,12 +9,19 @@ body {
         padding: 0;
         margin: 0;
     }
+    ul {
+        padding-left: 0px;
+    }
+    li {
+        list-style-type: none;
+    }
     #app {
         height: 100%;
         width: 100%;
     }
 }
     .main,
+    #router,
     .home-page {
         height: 100%;
     }
@@ -39,11 +46,9 @@ body {
         }
         .btn {
             background: #5CB85C;
-            a {
                 color: white;
                 text-decoration: none;
                 font-weight: bold;
-            }
         }
     }
     .home-page {
@@ -80,12 +85,78 @@ body {
                 border-radius: 4px;
                 padding: 10px 15px;
                 width: 25%;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                text-decoration: none;
+            }
+        }
+    }
+    .forecast {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .forecast-city-title {
+            padding-top: 20px;
+        }
+        .list-of-days {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 50px;
+            .day-container {
+                width: 33%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
                 a {
-                    color: white;
-                    font-weight: bold;
-                    font-size: 18px;
-                    text-decoration: none;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
+            img {
+                width: 50%;
+                height: 200px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+    .details-page,
+    .forecast-of-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        .detail-image {
+            display: flex;
+            justify-content: center;
+            width: 25%;
+            justify-self: center;
+            margin: auto;
+            padding-bottom: 15px;
+        }
+        .detail-date {
+            display: flex;
+            justify-content: center;
+            font-weight: lighter;
+            font-size: 35px;
+            margin: 0px;
+            padding: 35px 0;
+        }
+        h4 {
+            display: flex;
+            justify-content: center;
+            font-weight: lighter;
+            font-size: 35px;
+            padding: 0;
+            margin: 15px;
         }
     }

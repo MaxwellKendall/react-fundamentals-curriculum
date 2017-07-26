@@ -1,36 +1,50 @@
-//TODO : get the city from the URL and make the getData call to expose the array to the scope
-// TODO : map over each element in the array generating a grid of nice looking forecast icons and descriptions etc
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import getData from '../utils/api'
 import GetWeather from './GetWeather'
 import queryString from 'query-string'
-
+import Loading from './Loading'
+import FiveDayForecast from './FiveDayForecast'
 
 class Forecast extends React.Component {
     constructor(props){
         super(props);
-        console.log(this.props.location.pathname);
         this.state = {
-            Loading : true
+            data: null,
+            city: null
         }
-
-
+        const city = this.props.match.params.city; //getting value from router props.match.params.city
     }
-    componentWillMount(){
-        let x = this.props.location.pathname.substr(10);
-        let cityForecast = getData(x).then((resp) => {
-            return resp;
+    componentDidMount(){
+        const city = this.props.match.params.city; //
+        let cityForecast = getData(city);
+        let test = cityForecast.then((resp) => {
+            this.setState(function(){
+                return {
+                    data: resp,
+                    city: city
+                }
+            })
         });
-        console.log('this is x', x);
     };
 
-    render(){
-
+    render() {
+        const forecast = this.state.data;
+        console.log(forecast);
         return (
-            <div className="forecast">
-                <h1>This is the Forecast Page</h1>
+            <div>
+                {this.state.data != null
+                    ?
+                    <div className="forecast">
+                        <h1 className="forecast-city-title">{this.state.city.toUpperCase()}</h1>
+                        <FiveDayForecast
+                            forecast={forecast}
+                            city={this.state.city}
+                        />
+                    </div>
+                    :
+                    <Loading />
+                }
             </div>
         )
     }
