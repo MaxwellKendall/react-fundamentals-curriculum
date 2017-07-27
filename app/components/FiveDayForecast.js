@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const FiveDayForecast = (props) => {
     const city = props.city;
-    console.log('fiveday forecast', city);
+    console.log('fiveday forecast', props.forecast);
     return (
         <ul className="list-of-days">
             {props.forecast.map(( day, index ) => {

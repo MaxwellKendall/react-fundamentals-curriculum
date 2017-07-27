@@ -39,7 +39,7 @@ class Details extends React.Component{
                 </div>
             }
             {this.state.data === null &&
-                <Loading />
+                <Loading text="Just a Sec" speed="450"/>
             }
             </div>
         )

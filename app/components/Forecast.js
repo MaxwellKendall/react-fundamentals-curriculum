@@ -36,14 +36,14 @@ class Forecast extends React.Component {
                 {this.state.data != null
                     ?
                     <div className="forecast">
-                        <h1 className="forecast-city-title">{this.state.city.toUpperCase()}</h1>
+                        <h1 className="forecast-city-title">{`${this.state.city.charAt(0).toUpperCase()}${this.state.city.substr(1).toLowerCase()}`}</h1>
                         <FiveDayForecast
                             forecast={forecast}
                             city={this.state.city}
                         />
                     </div>
                     :
-                    <Loading />
+                    <Loading text="Just a Sec" speed="450"/>
                 }
             </div>
         )

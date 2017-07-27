@@ -74,7 +74,7 @@ body {
                 line-height: 30px;
                 border-radius: 4px;
                 padding: 10px 15px;
-                width: 50%;
+                width: 30%;
                 border: none;
                 margin-bottom: 5px;
                 font-size: 20px;
@@ -84,11 +84,13 @@ body {
                 border: none;
                 border-radius: 4px;
                 padding: 10px 15px;
-                width: 25%;
+                width: 20%;
                 color: white;
                 font-weight: bold;
                 font-size: 18px;
                 text-decoration: none;
+                display: flex;
+                justify-content: center;
             }
         }
     }
@@ -98,17 +100,18 @@ body {
         align-items: center;
         flex-direction: column;
         .forecast-city-title {
-            padding-top: 20px;
+            padding-top: 50px;
+            font-weight: lighter;
         }
         .list-of-days {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            width: 100%;
+            width: 90%;
             flex-wrap: wrap;
             padding: 50px;
             .day-container {
-                width: 33%;
+                width: 25%;
                 height: auto;
                 display: flex;
                 flex-direction: column;
@@ -159,4 +162,13 @@ body {
             padding: 0;
             margin: 15px;
         }
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        padding: 15%;
+        font-size: 100px;
     }
